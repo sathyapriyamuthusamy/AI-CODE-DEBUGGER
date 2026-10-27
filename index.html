@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A beginner-friendly Python code checker and debugging helper." />
+  <title>CodeLens — AI Code Debugger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="CodeLens home"><span class="brand-mark">⌘</span><span>Code<span class="brand-accent">Lens</span></span></a>
+      <div class="status"><span class="status-dot"></span><span id="api-status">Checking API…</span></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">DEVELOPER TOOLKIT / PYTHON</p>
+        <h1>Find the bug.<br /><span>Understand the fix.</span></h1>
+        <p class="hero-copy">A lightweight code companion that spots common Python issues and explains what to check next.</p>
+      </section>
+
+      <section class="workspace">
+        <div class="editor-panel">
+          <div class="panel-heading">
+            <div><span class="file-icon">PY</span><strong>main.py</strong></div>
+            <span class="muted">Python snippet</span>
+          </div>
+          <label class="sr-only" for="code-input">Python code</label>
+          <textarea id="code-input" spellcheck="false" aria-label="Python code editor">name = "Sam"
+print(user_name)
+
+def greet(person):
+    return "Hello, " + person</textarea>
+          <div class="editor-footer">
+            <button class="text-button" id="load-example" type="button">↻ Load example</button>
+            <span id="line-count">5 lines</span>
+          </div>
+          <button class="analyze-button" id="analyze-button" type="button"><span>Analyze code</span><span aria-hidden="true">↗</span></button>
+          <p class="privacy-note">Your snippet is sent only to the local API you run for this project.</p>
+        </div>
+
+        <div class="results-panel">
+          <div class="panel-heading results-heading">
+            <div><span class="result-symbol">✳</span><strong>Analysis results</strong></div>
+            <span class="muted" id="finding-count">Waiting</span>
+          </div>
+          <div id="results" class="results-content">
+            <div class="empty-state"><div class="empty-icon">⌁</div><h2>Ready when you are</h2><p>Run an analysis to see potential issues, line numbers, and practical suggestions.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bottom-note">
+        <span class="note-icon">i</span>
+        <p><strong>Keep in mind</strong> — static checks are suggestions, not proof. Always run your code and tests.</p>
+      </section>
+    </main>
+    <footer><span>CodeLens · AI Code Debugger</span><span>Built for learning, made for clarity.</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
